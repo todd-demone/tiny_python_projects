@@ -23,7 +23,8 @@ def get_args():
     # Going further, part 2: accept param that changes larboard to starboard.
     #
     # parser.add_argument(
-    # "-s", "--side", metavar="str", default="larboard", help="larboard | starboard"
+    # "-s", "--side", metavar="str", default="larboard", help="Side of the boat",
+    # choices=['starboard', 'larboard']
     # )
 
     return parser.parse_args()
