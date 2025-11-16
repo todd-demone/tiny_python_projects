@@ -60,15 +60,15 @@ def main():
     alpha = "".join(sorted(string.ascii_letters + string.punctuation))
     len_text = len(text)
     num_mutations = round(len_text * args.mutations)
-    new_text = text
+    new_text = list(text)
 
     indexes = random.sample(range(len_text), num_mutations)
 
     for i in indexes:
         new_char = random.choice(alpha.replace(new_text[i], ""))
-        new_text = new_text[:i] + new_char + new_text[i + 1 :]
+        new_text[i] = new_char
 
-    print(f'You said: "{text}"\nI heard : "{new_text}"')
+    print('You said: "{}"\nI heard : "{}"'.format(text, "".join(new_text)))
 
 
 # --------------------------------------------------
